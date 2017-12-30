@@ -13,7 +13,7 @@ export class MenuComponent {
     selectedRoute: string;
     isExpanded: boolean;
     constructor(private router: Router) {
-        this.isExpanded = false;
+        this.isExpanded = true;
     }
 
     clickedMenu() {
