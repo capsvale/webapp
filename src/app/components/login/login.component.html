@@ -1,0 +1,40 @@
+
+
+<div class=" content row align-center">
+    <h1>Login @ Capsvale Software</h1>
+        
+    <form class="well">
+        <div class="small-12 columns">
+            <label>Username
+                <input type="text" placeholder="Enter email address." id="email" 
+                [(ngModel)]="email" name="email" required #em="ngModel" />
+                <div class="alert callout" [hidden]="em.valid || em.pristine">
+                    Email is required.
+                </div> 
+            </label>
+        </div>
+
+        <div class="small-12 columns">
+                <label>password
+                    <input type="password" placeholder="Enter password." id="password1" 
+                    [(ngModel)]="password1" name="password1" required #pwd1="ngModel" />
+                    <div class="alert callout" [hidden]="pwd1.valid || pwd1.pristine">
+                        Password is required.
+                    </div> 
+                </label>
+        </div>
+
+        <div *ngIf="passwordFailed">
+            Password do not match.
+        </div>
+
+        <div class="small-12 columns">
+            <div class="expand button-group">
+                <a class="success button" (click)="login()">Login</a>
+                <a class="cancel button" (click)="cancel()">Cancel</a>
+
+            </div>
+        </div>
+    </form>
+
+</div>
