@@ -9,3 +9,17 @@
 .font-black{
     color: black; 
 }
+
+.cut-to-cut
+{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    text-align: center;
+}
+
+.card{
+    border-width:0px !important;
+    border-style: none !important;
+  }
