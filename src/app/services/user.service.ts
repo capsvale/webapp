@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { CanActivate, 
+import { CanActivate,
             Router,
-            ActivatedRouteSnapshot, 
+            ActivatedRouteSnapshot,
             RouterStateSnapshot} from '@angular/router';
 
             import * as firebase from 'firebase';
@@ -12,19 +12,19 @@ import { CanActivate,
 @Injectable()
 export class UserService implements CanActivate {
 
-    userloggedIn: boolean = false;
+    userloggedIn = false;
     loggedInUser: string;
     authUser: any;
 
     constructor( private router: Router ) {
   // Initialize Firebase
   const config = {
-    apiKey: "AIzaSyCzRWwuJTIYdzx9Ae4NbAFD-Q4-yQ41nRA",
-    authDomain: "capsvale-5b0f7.firebaseapp.com",
-    databaseURL: "https://capsvale-5b0f7.firebaseio.com",
-    projectId: "capsvale-5b0f7",
-    storageBucket: "capsvale-5b0f7.appspot.com",
-    messagingSenderId: "546150680942"
+    apiKey: 'AIzaSyCzRWwuJTIYdzx9Ae4NbAFD-Q4-yQ41nRA',
+    authDomain: 'capsvale-5b0f7.firebaseapp.com',
+    databaseURL: 'https://capsvale-5b0f7.firebaseio.com',
+    projectId: 'capsvale-5b0f7',
+    storageBucket: 'capsvale-5b0f7.appspot.com',
+    messagingSenderId: '546150680942'
   };
   firebase.initializeApp(config);
 
@@ -61,15 +61,14 @@ export class UserService implements CanActivate {
         }
     }
 
-    login(loginEmail: string, loginPassword:string){
+    login(loginEmail: string, loginPassword: string){
         firebase.auth().signInWithEmailAndPassword(loginEmail, loginPassword)
         .catch(function(error){
             alert('${error.message} Login Failed! Please try again!');
         });
     }
 
-    logout(){
-        
+    logout() {
         firebase.auth().signOut().then(function() {
             this.loggedInUser = '';
             this.userloggedIn = false;

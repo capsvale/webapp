@@ -9,12 +9,12 @@ import { UserService } from '../services/user.service';
 export class HomeComponent implements OnInit {
     title = 'Swara Chandan Deshmukh';
     theUser: string;
-    wrapSlides: boolean = true;
-	myInterval: number = 1000;
-    cdnVersion: number = 101;
-	images:any = [
-        {imageIdentifier: "sample"},
-        {imageIdentifier: "couple"},
+    wrapSlides = true;
+    myInterval = 1000;
+    cdnVersion = 101;
+    images: any = [
+        {imageIdentifier: 'sample'},
+        {imageIdentifier: 'couple'},
     ];
     constructor(private userSRV: UserService) {}
 
